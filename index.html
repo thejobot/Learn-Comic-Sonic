@@ -383,7 +383,7 @@ function goTab(id){tabBtns.forEach(function(b){b.classList.remove('active')});pa
 tabBtns.forEach(function(b){b.addEventListener('click',function(){goTab(b.dataset.tab)})});
 var jaVoice=null,enVoice=null,currentBtn=null;
 var jaVoices=[],enVoices=[];
-function scoreVoice(v,premium,basic){var n=v.name.toLowerCase();for(var i=0;i<premium.length;i++)if(n.indexOf(premium[i])>=0)return 100;if(n.indexOf('google')>=0)return 90;if(v.localService){for(var j=0;j<basic.length;j++)if(n.indexOf(basic[j])>=0)return 10;return 50}return 40}
+function scoreVoice(v,premium,basic){var n=v.name.toLowerCase();for(var i=0;i<premium.length;i++)if(n.indexOf(premium[i])>=0)return 100;if(n.indexOf('google')>=0)return 110;if(v.localService){for(var j=0;j<basic.length;j++)if(n.indexOf(basic[j])>=0)return 10;return 50}return 40}
 function initVoices(){
   var voices=speechSynthesis.getVoices();
   jaVoices=voices.filter(function(v){return v.lang==='ja-JP'||v.lang.indexOf('ja')===0});
